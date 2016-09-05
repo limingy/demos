@@ -1,0 +1,41 @@
+@startuml
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+interface Map
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+List <-* Map
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+
+abstract class Food {
+    int id
+    String name
+    float price
+
+}
+
+abstract class Order {
+    int id
+    int desk "几号桌"
+    List<Food> foods
+}
+
+@enduml

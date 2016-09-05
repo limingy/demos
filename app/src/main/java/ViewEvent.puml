@@ -1,0 +1,20 @@
+@startuml
+
+(*)  --> "Event"
+If "event is touchEvent" then
+--> [No] "dispatchGenericMotionEvent"
+
+else
+--> [Yes] "dispatchTouchEvent"
+if "onTouchListener != null" then
+--> [Yes] "onTouchListener.onTouch"
+
+else
+--> [No] "this(View).onTouchEvent"
+--> "performClick"
+if "onClickListener != null" then
+--> [Yes] "onClickListener.onClick"
+--> (*)
+
+
+@enduml

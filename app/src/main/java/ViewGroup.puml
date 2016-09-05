@@ -1,0 +1,16 @@
+@startuml
+
+A -> B: 请求
+B -> A: 响应
+
+actor Fool
+boundary Fool2
+control Fool3
+entity Fool4
+database Fool5
+
+Fool -> Fool2 : to boundary
+Fool2 --> Fool3 : to control
+
+
+@enduml
